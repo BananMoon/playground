@@ -13,20 +13,22 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalTime;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 @SpringBootTest
 class AsyncTaskTest {
     @Autowired
     private AsyncTask asyncTask;
 
     @Test
-    void asyncCaller() {
-        asyncTask.asyncCaller();
+    void async() {
+        System.out.println("1. Before async() Calling : " + LocalTime.now());
+        asyncTask.async();
+        System.out.println("3. async() finished : " + LocalTime.now());
     }
 
     @Test
-    void syncCaller() {
-        asyncTask.syncCaller();
+    void sync() {
+        System.out.println("1. Before Calling : " + LocalTime.now());
+        asyncTask.sync();
+        System.out.println("3. sync() finished : " + LocalTime.now());
     }
 }
