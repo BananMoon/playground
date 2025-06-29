@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: Playground
+#  task:
+#    execution:
+#      pool:
+#        max-size: 10
+#        queue-capacity: 100
+#        core-size: 8
+
